@@ -1,4 +1,4 @@
-# Computational-Linear-Algebra
+# Computational Linear Algebra
 
 This is just some notes from computational linear algebra. 
 
