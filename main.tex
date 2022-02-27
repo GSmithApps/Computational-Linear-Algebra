@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Computational Linear Algebra}
+\author{Grant Smith}
+\date{Spring 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Matrices}
+
+A table of numbers
+
+\subsection{Matrix Multiplication Properties}
+
+$$ (AB)C = A(BC) = ABC $$
+
+$$ A(B+C) = AB + AC $$
+
+$$ (AB)^{T} = B^{T}A^{T} $$
+
+\subsection{Special Matrices}
+
+\begin{itemize}
+    \item Zero Matrix
+    \item Identity Matrix
+    \item Symmetric Matrices
+    $A^T=A$
+    
+    \item Triagnle matrices or trapezoidal, and diagonal is a subset
+    
+    
+\end{itemize}
+\subsubsection{Upper triangular matrix}
+\begin{itemize}
+ \item easy to solve
+\item eigenvalues are right there
+\item determinants are right there too   
+\end{itemize}
+
+\subsubsection{Lower Triangular}
+if they are both upper triangular and lower triangular, then they are diagonal
+I don't know much about lower triangular matrices
+
+\subsubsection{Diagonal Matrices}
+Very easy to solve a linear system
+
+\section{Essential Problems of Linear Algebra}
+
+\subsection{Solve Linear Systems}
+
+$Ax = b$
+
+Use Gauss Jordan Elimination to solve
+
+Computing determinants is $n!$, so we essentially never do it
+
+
+\subsection{Eigenvalue Problems}
+
+Eigenvalues are vectors such that
+
+$$Av = \lambda v$$
+
+bridges are essentially eigenvalue problems
+
+\subsection{Singular Value Problem}
+
+This is about finding vectors $u$ and $v$ such that
+
+$$Au = \sigma v$$
+
+Or
+
+$$A^*u = \sigma v$$
+
+
+\subsection{Matrix Decomposition}
+Diagonalization is an example, and SVD is another example.  The goal here is to write a matrix as a product of two other matrices. Here are a couple examples
+
+\subsubsection{LU}
+
+$$A = LU$$
+
+Where $L$ is lower triangular and $U$ is upper triangular
+
+Why is this particular composiiton useful?  All the work is done in computing the two matrices $L$ and $U$, and then once you have that, you can solve everything else cheaply. You're essentially done.
+
+\subsubsection{QR}
+
+This example is $$A = QR$$
+
+Where $Q$ is unitary and $R$ is upper triangular
+
+\subsubsection{SVD}
+
+This one is:
+
+$$A = U\Sigma V^*$$
+
+where $U$ and $V^*$ are unitary and $\Sigma$ is diagonal
+
+
+\end{document}
