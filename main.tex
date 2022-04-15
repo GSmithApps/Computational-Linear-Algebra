@@ -103,7 +103,7 @@ Now that we know the dimension of the row space is equal to the dimension of the
 At this point, we could make one of those two matrices orthogonal or orthonormal. That would be nice because orthogonal and orthonormal bases are great. The problem is we can only really do one at a time. For example, if we make $C (or E)$ orthonormal (and there are infinite options of orthonormal bases), then that specifies the weightings on $B (or D)$.  And vice versa if we chose to make the left matrix orthonormal, then that would change the numbers in the right matrix. 
 
 But! If you choose your orthonormal vectors just right on either side (i.e. choose the right one of the infinite options), then you can allow the vectors on the other side to be orthogonal as well, and you can factor out their sizes to make them orthonormal. And this is the SVD.  If we choose just the right orthonormal basis of the row space, then we can actually make the column space orthonormal too.  And same for the other way around. We'll talk more about how to do this, but for now just know that there is something coming.
-
+\newpage
 \section{LU Decomposition}
 
 We will do the LU decomposition of:
@@ -352,5 +352,54 @@ $$\begin{bmatrix}
     -\frac{3}{4}\\
 \end{bmatrix}$$
 
+Scaling all to have 1 as a pivot:
+
+$$\begin{bmatrix}
+  1  & \frac{-1}{5} & \frac{6}{5} \\
+    0 & 1 & \frac{21}{4} \\
+    0  & 0 & 1 \\
+\end{bmatrix}x = \begin{bmatrix}
+  \frac{1}{5}  \\
+  -\frac{9}{4} \\
+  -1\\
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+  1  & \frac{-1}{5} & \frac{6}{5} \\
+    0 & 1 & 0 \\
+    0  & 0 & 1 \\
+\end{bmatrix}x = \begin{bmatrix}
+  \frac{1}{5}  \\
+  3 \\
+  -1\\
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+  1  & 0 & 0 \\
+    0 & 1 & 0 \\
+    0  & 0 & 1 \\
+\end{bmatrix}x = \begin{bmatrix}
+  \frac{1}{5} + \frac{3}{5} + \frac{6}{5}  \\
+  3 \\
+  -1\\
+\end{bmatrix}$$
+
+$$\begin{bmatrix}
+  1  & 0 & 0 \\
+    0 & 1 & 0 \\
+    0  & 0 & 1 \\
+\end{bmatrix}x = \begin{bmatrix}
+  2  \\
+  3 \\
+  -1\\
+\end{bmatrix}$$
+
+$$x = \begin{bmatrix}
+  2  \\
+  3 \\
+  -1\\
+\end{bmatrix}$$
+
+Which matches what I got by using RREF on the augmented matrix in Julia.
 
 \end{document}
